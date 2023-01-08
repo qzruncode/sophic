@@ -1,10 +1,14 @@
+[![NPM version](https://img.shields.io/npm/v/sophic.svg)](https://www.npmjs.com/package/sophic)
+[![NPM package](https://img.shields.io/npm/dy/sophic.svg)](https://www.npmjs.com/package/sophic)
+
+
 ## sophic微应用框架
 
 ### 为什么要设计此框架？
 
 1. 为了尽可能少改造原项目代码，更好实现css隔离和js隔离
 2. 为了在主应用中用户访问子应用更加丝滑（实现方式：预加载 + 缓存）
-3. 为了和dark-tunnel构建工具一起使用，能够更加方便的初始化应用模板，避免繁琐配置
+3. 为了和[dark-tunnel](https://www.npmjs.com/package/dark-tunnel)构建工具一起使用，能够更加方便的初始化应用模板，避免繁琐配置
 4. ...
 
 ### 使用示例
