@@ -7,6 +7,32 @@
 3. 为了和dark-tunnel构建工具一起使用，能够更加方便的初始化应用模板，避免繁琐配置
 4. ...
 
+### 使用示例
+
+```
+安装dark-tunnel脚手架工具
+npm install dark-tunnel -g
+
+初始化主应用模板
+mkdir masterApp
+cd masterApp
+dark init sophic-master-template
+npm install
+
+初始化子应用模板
+cd ../
+mkdir subApp
+cd subApp
+dark init sophic-template
+npm install
+npm start 启动服务后，通过 https://local.test.com:3002/sub 可以单独访问子应用
+
+启动主应用
+cd masterApp
+npm start 启动服务后，通过 https://local.test.com:3001 访问主应用，并且在主应用中查看子应用
+如果在主应用中开启"sw"缓存，需要禁止chrome跨域，在命令行中执行 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp/foo --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=https://localhost:3001/
+```
+
 ### 主应用中注册微应用
 
 ```
@@ -92,11 +118,4 @@ window[subAppName] = {
   "nocache"：无缓存
   "indexedDB"：采用indexedDB缓存，必须在子应用中配置uid.js文件，并配合dark-tunnel打包工具，在每次编译过程中会生成唯一的uid，根据此uid进行缓存的复用和更新。此方式具有稳定可靠的优点。
   "sw"：使用service worker拦截请求，资源缓存在cache中，这种模式在浏览器独立线程中缓存资源，用户体验会更加丝滑
-```
-
-### 使用细节
-
-```
-具体的使用细节
-文档待补充...
 ```
