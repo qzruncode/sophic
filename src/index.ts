@@ -190,6 +190,6 @@ export const Sophic: SophicConstructor = class implements SophicInterface {
   }
 
   static getSophic() {
-    return window.appState.sophicInstance;
+    return window.appState?.sophicInstance;
   }
 };
